@@ -110,8 +110,8 @@ public class TradeService {
 
         SuccessResponse response = new SuccessResponse();
         response.setSymbol(stockSymbol);
-        response.setHighestPrice(tradePrices.get(0));
-        response.setLowestPrice(tradePrices.get(tradePrices.size()-1));
+        response.setHighestPrice(tradePrices.get(tradePrices.size()-1));
+        response.setLowestPrice(tradePrices.get(0));
 
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 
