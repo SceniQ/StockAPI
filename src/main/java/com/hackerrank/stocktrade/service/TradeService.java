@@ -111,7 +111,7 @@ public class TradeService {
         response.setHighestPrice(tradePrices.get(tradePrices.size()-1));
         response.setLowestPrice(tradePrices.get(0));
 
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
 
