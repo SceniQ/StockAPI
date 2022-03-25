@@ -39,8 +39,6 @@ public class TradeService {
         newTrade.setPrice(request.getPrice());
         newTrade.setTimestamp(LocalDateTime.
                 parse(request.getTimestamp().replace(" ","T")));
-
-        userRepository.save(request.getUser());
         repository.save(newTrade);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
