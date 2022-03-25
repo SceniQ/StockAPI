@@ -5,6 +5,7 @@ import com.hackerrank.stocktrade.model.repository.TradeRepository;
 import com.hackerrank.stocktrade.service.TradeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +16,8 @@ public class TradesController {
 
     final TradeService service;
 
-    @PostMapping
-    public ResponseEntity<?> addNewTrade(TradeRequest request){
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> addNewTrade(@RequestBody TradeRequest request){
         return service.addTrade(request);
     }
 
